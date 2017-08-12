@@ -7,19 +7,19 @@ function cdnPath($cdn, $asset)
 
 function cdn($asset)
 {
-    if (Config::get('cdn')) {
-        $cdns = Config::get('cdn');
+		$cdn_config = Config::get('cdn');
+    if ($cdn_config) {
         $assetName = explode('?', basename($asset));
 
-        foreach ($cdns as $cdn => $types) {
+        foreach ($cdn_config as $cdn => $types) {
             if (preg_match('/^.*\.('.$types.')$/i', $assetName[0])) {
                 return cdnPath($cdn, $asset);
             }
         }
 
-        end($cdns);
+        end($cdn_config);
 
-        $path = cdnPath(key($cdns), $asset);
+        $path = cdnPath(key($cdn_config), $asset);
     } else {
         $path = asset($asset);
     }
