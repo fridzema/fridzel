@@ -54,7 +54,6 @@ class PhotosController extends Controller
             $photo->iptc = $iptc_data;
             $photo->addMedia($requestFile)->toMediaCollection('images');
             $photo->save();
-
         }
 
         Cache::flush();
@@ -104,11 +103,11 @@ class PhotosController extends Controller
      */
     public function destroy($id)
     {
-       $photo = Photo::find($id);
-       $photo->forceDelete();
+        $photo = Photo::find($id);
+        $photo->forceDelete();
 
-       Cache::flush();
+        Cache::flush();
 
-       return redirect()->back();
+        return redirect()->back();
     }
 }
