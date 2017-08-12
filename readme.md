@@ -35,7 +35,13 @@ Fridzel | Minimalistic photo CMS 📸
 * Ansible provision script
 
 ## Installation
-`git clone https://github.com/fridzema/fridzel && cd fridzel && composer install && npm install && npm run dev && cp .env.example .env`
+
+Recommended:
+`composer create-project fridzema/fridzel `
+
+Or:
+
+`git clone https://github.com/fridzema/fridzel && cd fridzel && composer install && cp .env.example .env`
 
 Fill the `.env` file with your own values, and then do not forget to seed the database
 
