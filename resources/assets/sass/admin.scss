@@ -52,18 +52,49 @@ html {
         padding: 0;
      }
 
+ 		.btn {
+ 			display: none;
+ 			background-color: rgba(255, 255, 255, .5);
+ 			margin: 0;
+ 			padding: 10px;
+			border: none;
+			outline: none;
+
+			&.drag-handle {
+				position: absolute;
+				right:  30px;
+				bottom: 0;
+
+				&:hover {
+					cursor: move;
+				}
+			}
+
+	    &.delete {
+	    	position: absolute;
+	    	bottom: 0;
+	    	right: 0;
+	    }
+
+			&:hover {
+				cursor: pointer;
+				background-color: rgba(255, 255, 255, 1);
+			}
+		}
+
      &:hover {
        -webkit-box-shadow: 0 2px 15px 1px rgba(0, 0, 0, 0.5);
        -moz-box-shadow: 0 2px 15px 1px rgba(0, 0, 0, 0.5);
        box-shadow: 0 2px 15px 1px rgba(0, 0, 0, 0.5);
+
+       .btn {
+       	display: block;
+       }
     }
 
-    .delete {
-    	position: absolute;
-    	border: none;
-    	bottom: 0;
-    	right: 0;
-    }
+
+
+
  }
 }
 
@@ -117,6 +148,14 @@ html {
   font-size: 10px;
   text-decoration: none;
   color: #000;
+}
+.icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	stroke-width: 0;
+	stroke: currentColor;
+	fill: currentColor;
 }
 }
 }

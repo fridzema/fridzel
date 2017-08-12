@@ -12,7 +12,7 @@ class PhotoPathGenerator implements PathGenerator
      */
     public function getPath(Media $media) : string
     {
-        return md5(str_random(10)).'/';
+        return $media->id.'/';
     }
 
     /*

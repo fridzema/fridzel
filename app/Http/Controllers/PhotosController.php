@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Cache;
 use App\Photo;
 use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -16,9 +15,7 @@ class PhotosController extends Controller
      */
     public function index()
     {
-        $photos = Cache::rememberForever('photos', function () {
-            return Photo::all();
-        });
+        $photos = Photo::all();
 
         return response()->view('admin.photos.index', ['photos' => $photos]);
     }
@@ -55,8 +52,6 @@ class PhotosController extends Controller
             $photo->addMedia($requestFile)->toMediaCollection('images');
             $photo->save();
         }
-
-        Cache::flush();
 
         return response()->json(['success' => true]);
     }
@@ -106,8 +101,21 @@ class PhotosController extends Controller
         $photo = Photo::find($id);
         $photo->forceDelete();
 
-        Cache::flush();
-
         return redirect()->back();
+    }
+
+
+    public function reorder(Request $request){
+    	// http://stackoverflow.com/questions/15633341/jquery-ui-sortable-then-write-order-into-a-database/15635201#15635201
+	    $i = 0;
+	    foreach ($request->input('sort_order') as $value) {
+	      $photo = Photo::find($value);
+	      $photo->order_index = $i;
+	      $photo->save();
+
+	      $i++;
+	    }
+
+	    return response()->json(['success' => true]);
     }
 }
