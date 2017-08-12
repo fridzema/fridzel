@@ -17,7 +17,6 @@ class FrontendController extends Controller
         $photos = Cache::rememberForever('photos', function () {
             return Photo::all();
         });
-
         $response = (count($photos)) ? response()->view('frontend.photos.index', ['photos' => $photos]) : redirect()->route('login');
 
         return $response;

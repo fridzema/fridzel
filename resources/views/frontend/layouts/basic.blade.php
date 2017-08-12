@@ -2,7 +2,7 @@
 <html>
     <head>
       <title>Robert Fridzema - Rotterdam</title>
-      <link rel="shortcut icon" href="https://static.fridzema.com/favicon.ico" type="image/x-icon" />
+      <link rel="shortcut icon" href="{{cdn('favicon.ico')}}" type="image/x-icon" />
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="description" content="Robert Fridzema, Photography Rotterdam">
       <meta name="keywords" content="robert, fridzema, rotterdam, photo, photograph, camera">
@@ -23,7 +23,7 @@
 	          window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
 	          ga('create','{{ env('ANALYTICS_ID') }}','auto');ga('send','pageview')
 	      </script>
-	      <script src="{{ cdn('js/analytics.js') }}" async defer></script>
+	      <script src="https://www.google-analytics.com/analytics.js" async defer></script>
       @endif
     </body>
 </html>
