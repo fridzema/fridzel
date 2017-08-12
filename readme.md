@@ -37,6 +37,7 @@ Fridzel | Minimalistic photo CMS 📸
 ## Installation
 
 Recommended:
+
 `composer create-project fridzema/fridzel `
 
 Or:
