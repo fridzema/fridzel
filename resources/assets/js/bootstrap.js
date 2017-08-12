@@ -1,0 +1,1 @@
+global.Dropzone = require('dropzone');
