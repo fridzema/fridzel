@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e931ac88e87f69225f2448f560ff7aab",
+    "content-hash": "bf88cda3236e8ddd3f06cd5c20a95308",
     "packages": [
         {
             "name": "appstract/laravel-opcache",
@@ -225,6 +225,48 @@
                 "parser"
             ],
             "time": "2017-05-14T14:47:48+00:00"
+        },
+        {
+            "name": "fridzema/cdn-prefixer",
+            "version": "v0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fridzema/cdn-prefixer.git",
+                "reference": "8c4a0bffe714c8fa73dae24ebe5eb1f63ab39128"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fridzema/cdn-prefixer/zipball/8c4a0bffe714c8fa73dae24ebe5eb1f63ab39128",
+                "reference": "8c4a0bffe714c8fa73dae24ebe5eb1f63ab39128",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Fridzema\\CdnPrefixer\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Fridzema",
+                    "email": "fridzema@gmail.com",
+                    "homepage": "https://fridzema.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Little optional cdn url prefixer, can be used as an replacement for the default asset helper",
+            "homepage": "https://github.com/fridzema/cdn-prefixer",
+            "keywords": [
+                "asset",
+                "cdn",
+                "laravel",
+                "prefixer"
+            ],
+            "time": "2017-08-12T19:43:39+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
