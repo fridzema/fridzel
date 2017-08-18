@@ -182,6 +182,7 @@ return [
         Appstract\Opcache\OpcacheServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
         Spatie\ResponseCache\ResponseCacheServiceProvider::class,
+        Fridzema\CdnPrefixer\CdnPrefixerServiceProvider::class,
     ],
 
     /*

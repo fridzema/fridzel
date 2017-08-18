@@ -23,7 +23,6 @@
 				{{ csrf_field() }}
 			</form>
 		@endif
-    <script src="{{cdn('js/admin.js')}}"></script>
-    <script type="text/javascript">Dropzone.autoDiscover = false;</script>
+	@yield('scripts')
 </body>
 </html>

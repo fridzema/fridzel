@@ -3,12 +3,24 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use Spatie\MediaLibrary\HasMedia\Interfaces\HasMediaConversions;
 
 class Photo extends Model implements HasMediaConversions
 {
     use HasMediaTrait;
+
+    protected static function boot()
+		{
+		    parent::boot();
+
+		    // Order by name ASC
+		    static::addGlobalScope('ordered', function (Builder $builder) {
+		        $builder->orderBy('order_index', 'asc');
+		    });
+		}
+
 
     /**
      * The attributes that should be cast to native types.

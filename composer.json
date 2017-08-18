@@ -1,12 +1,13 @@
 {
     "name": "fridzema/fridzel",
-    "description": "Performance focused modern technology 📸 CMS",
-    "keywords": ["cms", "photo"],
+    "description": "Minimalistic photo CMS 📸",
+    "keywords": ["cms", "photo", "laravel"],
     "license": "MIT",
     "type": "project",
     "require": {
         "php": ">=5.6.4",
         "appstract/laravel-opcache": "^1.1",
+        "fridzema/cdn-prefixer": "^0.0.1",
         "htmlmin/htmlmin": "^4.5",
         "intervention/image": "^2.4",
         "laravel/framework": "5.4.*",
@@ -25,9 +26,6 @@
         "classmap": [
             "database"
         ],
-       	"files": [
-         "app/fridzel/helpers.php"
-     		],
         "psr-4": {
             "App\\": "app/"
         }
@@ -52,7 +50,13 @@
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
         ],
-        "cs": "vendor/bin/php-cs-fixer fix ./ --config=vendor/arubacao/php-cs-fixer-config/laravel.php_cs -vv"
+        "cs": "vendor/bin/php-cs-fixer fix ./ --config=vendor/arubacao/php-cs-fixer-config/laravel.php_cs -vv",
+        "clear": [
+            "php artisan cache:clear",
+            "php artisan config:clear",
+            "php artisan migrate:refresh --seed",
+            "php artisan medialibrary:clear"
+        ]
     },
     "config": {
         "preferred-install": "dist",
