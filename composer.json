@@ -1,7 +1,7 @@
 {
     "name": "fridzema/fridzel",
-    "description": "Performance focused modern technology 📸 CMS",
-    "keywords": ["cms", "photo"],
+    "description": "Minimalistic photo CMS 📸",
+    "keywords": ["cms", "photo", "laravel"],
     "license": "MIT",
     "type": "project",
     "require": {
@@ -50,7 +50,13 @@
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize"
         ],
-        "cs": "vendor/bin/php-cs-fixer fix ./ --config=vendor/arubacao/php-cs-fixer-config/laravel.php_cs -vv"
+        "cs": "vendor/bin/php-cs-fixer fix ./ --config=vendor/arubacao/php-cs-fixer-config/laravel.php_cs -vv",
+        "clear": [
+            "php artisan cache:clear",
+            "php artisan config:clear",
+            "php artisan migrate:refresh --seed",
+            "php artisan medialibrary:clear"
+        ]
     },
     "config": {
         "preferred-install": "dist",
