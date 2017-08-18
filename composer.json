@@ -55,7 +55,8 @@
             "php artisan cache:clear",
             "php artisan config:clear",
             "php artisan migrate:refresh --seed",
-            "php artisan medialibrary:clear"
+            "php artisan medialibrary:clear",
+            "php artisan medialibrary:clean"
         ]
     },
     "config": {
