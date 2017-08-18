@@ -6,9 +6,9 @@
 Fridzel | Minimalistic photo CMS 📸
 
 ## 🖼 Screenshots
-<img src="https://static.fridzema.com/img/s1.jpg" alt="Frontend" title="Frontend"/>
-<img src="https://static.fridzema.com/img/s2.jpg" alt="Login" title="Login"/>
-<img src="https://static.fridzema.com/img/s3.jpg" alt="Admin" title="Admin"/>
+<img src="https://static.fridzema.com/img/s1.jpg?v=3" alt="Frontend" title="Frontend"/>
+<img src="https://static.fridzema.com/img/s2.jpg?v=3" alt="Login" title="Login"/>
+<img src="https://static.fridzema.com/img/s3.jpg?v=3" alt="Admin" title="Admin"/>
 
 ## ⚙️ Features
 * Basic Drag and Drop File upload (Dropzone)
@@ -37,6 +37,7 @@ Fridzel | Minimalistic photo CMS 📸
 ## Installation
 
 Recommended:
+
 `composer create-project fridzema/fridzel `
 
 Or:
