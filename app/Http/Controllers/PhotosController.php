@@ -38,22 +38,28 @@ class PhotosController extends Controller
      */
     public function store(Request $request)
     {
+    		$response = [];
         foreach ($request->file('file') as $requestFile) {
-            $exif_data = [];
-            $iptc_data = [];
-            $intervention_image = Image::make($requestFile->getRealPath());
-            $exif_data = ($intervention_image->exif()) ? json_encode($intervention_image->exif()) : null;
-            $iptc_data = ($intervention_image->iptc()) ? json_encode($intervention_image->iptc()) : null;
+            // $exif_data = [];
+            // $iptc_data = [];
+            // $intervention_image = Image::make($requestFile->getRealPath());
+            // $exif_data = ($intervention_image->exif()) ? json_encode($intervention_image->exif()) : null;
+            // $iptc_data = ($intervention_image->iptc()) ? json_encode($intervention_image->iptc()) : null;
 
             $photo = new Photo();
             $photo->filename = $requestFile->getClientOriginalName();
-            $photo->exif = $exif_data;
-            $photo->iptc = $iptc_data;
+            // $photo->exif = $exif_data;
+            // $photo->iptc = $iptc_data;
             $photo->addMedia($requestFile)->toMediaCollection('images');
             $photo->save();
+
+        		$response['url'] = asset($photo->getMedia('images')->first()->getUrl('small'));
         }
 
-        return response()->json(['success' => true]);
+
+
+
+        return response()->json($response);
     }
 
     /**
@@ -106,7 +112,6 @@ class PhotosController extends Controller
 
 
     public function reorder(Request $request){
-    	// http://stackoverflow.com/questions/15633341/jquery-ui-sortable-then-write-order-into-a-database/15635201#15635201
 	    $i = 0;
 	    foreach ($request->input('sort_order') as $value) {
 	      $photo = Photo::find($value);

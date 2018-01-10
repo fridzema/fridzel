@@ -2,7 +2,7 @@
 
 @section('content')
 <section id="login">
-	<img id="logo" src="{{ cdn('img/logo.svg') }}" alt="Logo Fridzel" title="Logo Fridzel" width="100" height="100" />
+	<img id="logo" src="{{ asset('img/logo.svg') }}" alt="Logo Fridzel" title="Logo Fridzel" width="100" height="100" />
 	<form action="{{ route('login') }}" method="POST" role="form">
 	    {{ csrf_field() }}
 

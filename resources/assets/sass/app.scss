@@ -56,6 +56,30 @@ html {
     }
  }
 }
+	#photo {
+		.photo {
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+
+		  /* Preserve aspet ratio */
+		  min-width: 100%;
+		  min-height: 100%;
+		}
+
+		a {
+			z-index: 999;
+			position: absolute;
+			top: 10px;
+			left: 10px;
+			opacity: .5;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
 }
 
 @media screen and (max-width: 1215px) {

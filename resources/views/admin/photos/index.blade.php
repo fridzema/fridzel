@@ -12,12 +12,12 @@
 <div id="photos">
 	@foreach($photos as $photo)
 		<a data-model-id="{{ $photo->id }}" data-order-id="@if(!is_null($photo->id)){{ $photo->id }}@endif">
-			<img src="{{ cdn($photo->getMedia('images')->first()->getUrl('small')) }}" alt="Photo not found" title="{{$photo->filename}}" />
+			<img src="{{ asset($photo->getMedia('images')->first()->getUrl('small')) }}" alt="Photo not found" title="{{$photo->filename}}" />
       <button class="btn drag-handle">
-        <img src="{{cdn('icons/move.svg')}}" width="20" height="20" />
+        <img src="{{asset('icons/move.svg')}}" width="20" height="20" />
       </button>
      <button type="submit" class="btn delete" onclick="event.preventDefault(); document.getElementById('delete-form').submit();">
-     	<img src="{{cdn('icons/trash.svg')}}" width="20" height="20" />
+     	<img src="{{asset('icons/trash.svg')}}" width="20" height="20" />
      </button>
 		<form id="delete-form" method="post" action="{{ route('photos.destroy', $photo->id) }}" style="display: none;">
 			<input name="_method" type="hidden" value="DELETE" />
@@ -29,6 +29,11 @@
 @endsection
 
 @section('scripts')
-	<script src="{{cdn('js/admin.js')}}"></script>
+	<script id="uploaded-photos" type="x-tmpl-mustache">
+		@{{#photos}}
+			@{{ photo.filename }}
+		@{{/photos}}
+	</script>
+	<script src="{{asset('js/admin.js')}}"></script>
 	<script type="text/javascript">Dropzone.autoDiscover = false;</script>
 @endsection

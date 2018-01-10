@@ -16,8 +16,8 @@
 */
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/', 'FrontendController@index');
-    Route::get('photo/{photoId}', 'FrontendController@show')->name('photo.show');
+    Route::get('/', 'FrontendController@index')->name('index');
+    Route::get('photo/{id}', 'FrontendController@show')->name('photo.show');
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => ['admin']], function () {

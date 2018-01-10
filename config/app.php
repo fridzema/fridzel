@@ -175,14 +175,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
-        GrahamCampbell\HTMLMin\HTMLMinServiceProvider::class,
-        Appstract\Opcache\OpcacheServiceProvider::class,
-        Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
-        Appstract\Opcache\OpcacheServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
-        Spatie\ResponseCache\ResponseCacheServiceProvider::class,
-        Fridzema\CdnPrefixer\CdnPrefixerServiceProvider::class,
+        App\Providers\RouteServiceProvider::class
     ],
 
     /*
@@ -231,7 +224,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'HTMLMin' => GrahamCampbell\HTMLMin\Facades\HTMLMin::class,
+        // 'HTMLMin' => GrahamCampbell\HTMLMin\Facades\HTMLMin::class,
         'ResponseCache' => Spatie\ResponseCache\ResponseCacheFacade::class,
     ],
 

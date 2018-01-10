@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fridzel </title>
-    <link href="{{ cdn('css/admin.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     @yield('stylesheets')
     <script>
         window.Laravel = {!! json_encode([
@@ -12,12 +12,11 @@
     </script>
 </head>
 <body>
-
 		@yield('content')
 
 		@if(Auth::user())
 		  <a class="logout" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-		    Logout
+		    <img src="{{asset('icons/logout.svg')}}" title="Log out" width="20" height="20" />
 		  </a>
 			<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 				{{ csrf_field() }}

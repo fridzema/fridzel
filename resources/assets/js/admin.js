@@ -1,6 +1,7 @@
 require('./bootstrap');
 
-var uploadErrors = false;
+var photoContainer = document.getElementById('photos');
+var template = document.getElementById('uploaded-photos');
 
 new Dropzone("#dropzone", {
     params: {
@@ -11,16 +12,18 @@ new Dropzone("#dropzone", {
     maxFilesize: 100,
     parallelUploads: 10,
     uploadMultiple: true,
-    error: function() {
-      uploadErrors = true;
-  	},
-    queuecomplete: function(){
-    	if(!uploadErrors) location.reload();
+    init: function(){
+      this.on("success", function(data) {
+          var response = JSON.parse(data.xhr.response);
+          console.log(response)
+          var img = document.createElement('img');
+					img.src = ''+response.url+'';
+					document.getElementById('photos').appendChild(img)
+      });
     }
 });
 
-var el = document.getElementById('photos');
-var sortable = Sortable.create(el, {
+var sortable = Sortable.create(photoContainer, {
   dataIdAttr: 'data-model-id',
   handle: '.drag-handle',
   sort: true,
