@@ -17,6 +17,7 @@
     "axios": "^0.16.2",
     "dropzone": "^5.1.1",
     "mustache": "^2.3.0",
+    "semantic-ui": "^2.2.13",
     "sortablejs": "^1.6.0"
   }
 }
